@@ -1,8 +1,9 @@
 {
   "name": "astra-ui",
-  "version": "0.0.1-pre",
+  "version": "0.0.2-pre",
   "description": "react ui component library",
   "main": "build/index.js",
+  "typings": "build/index.js",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
