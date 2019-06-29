@@ -43,7 +43,15 @@ module.exports = {
 						limit: 50000,
 					},
 				},
-			},
+      },
+      { 
+        test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, 
+        use: [
+          {
+            loader: 'file-loader' 
+          }
+        ]
+      }
     ]
   },
   resolve: {
