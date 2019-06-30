@@ -1,0 +1,6 @@
+html *,
+html *:before,
+html *:after {
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
+}

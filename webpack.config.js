@@ -51,6 +51,14 @@ module.exports = {
             loader: 'file-loader' 
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'css-loader'
+          }
+        ]
       }
     ]
   },

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../DefaultTheme';
+import { bounceright, wiggle } from './ButtonKeyframes';
 
 // Styled components 💅 is library that allows you create components easily and
 // style them, css-in-js style. It's totally optional, but I prefer to use it
@@ -37,24 +38,10 @@ export const DefaultButtonWrapper = styled.button`
     }
 `;
 
-export const PrimaryButtonWrapper = styled.button`
-    background: ${theme.primaryBgPallete};
-	border: 1px solid ${theme.primaryBgPallete};
-    border-radius: 0;
-	color: ${theme.primaryTextPallete};
-    cursor: pointer;
-    outline: none;
-	padding: 8px 15px;
-    
-    &:hover{
-        background: ${theme.secondaryBgPallete};
-        border: 1px solid ${theme.secondaryBgPallete};
-    }
-`;
-
-export const FindButtonWrapper = styled.button`
-    background: #009ed8;
+export const EmailButtonWrapper = styled.button`
+    background: #C673B3;
     border: none;
+    box-sizing: border-box;
     color: white;
     display: inline-block;
     min-width: 240px;
@@ -72,7 +59,172 @@ export const FindButtonWrapper = styled.button`
         padding-top: inherit;
         padding-bottom: inherit;
         width: 45px;
-        content: "\00a0";
+        content: "";
+        text-align: center;
+        transition: 0.2s;
+        transform-origin: 50% 60%;
+        background: rgba(0, 0, 0, 0.1);
+    }
+    &:active,
+    &:focus {
+        background: #963d82;
+    }
+    & svg {
+        position: absolute;
+        top: 4px;
+        bottom: 0;
+        right: 0;
+        width: 45px;
+        font-size: 14px;
+    }
+    &:hover {
+        background: #b74f9f;
+
+        svg {
+            -webkit-animation: none;
+            -webkit-transform: skew(-20deg);
+            animation: none;
+            transform: skew(-20deg);
+            text-indent: 0.1em;
+        }
+    }
+`;
+
+export const PhoneButtonWrapper = styled.button`
+    background: #139675;
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    min-width: 240px;
+    padding: 8px 15px;
+    padding-right: 75px;
+    position: relative;
+    transition: 0.2s;
+    -webkit-font-smoothing: antialiased;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        width: 45px;
+        content: "";
+        text-align: center;
+        transition: 0.2s;
+        transform-origin: 50% 60%;
+        background: rgba(0, 0, 0, 0.1);
+    }
+    &:active,
+    &:focus {
+        background: #083b2e;
+    }
+    & svg {
+        position: absolute;
+        top: 4px;
+        bottom: 0;
+        right: 0;
+        width: 45px;
+        font-size: 14px;
+    }
+    &:hover {
+        background: #0d6952;
+
+        svg {
+            -webkit-animation: ${wiggle} 0.05s alternate ease infinite;
+            animation: ${wiggle} 0.05s alternate ease infinite;
+        }
+    }
+`;
+
+export const PrimaryButtonWrapper = styled.button`
+    background: ${theme.primaryBgPallete};
+	border: 1px solid ${theme.primaryBgPallete};
+    border-radius: 0;
+	color: ${theme.primaryTextPallete};
+    cursor: pointer;
+    outline: none;
+	padding: 8px 15px;
+    
+    &:hover{
+        background: ${theme.secondaryBgPallete};
+        border: 1px solid ${theme.secondaryBgPallete};
+    }
+`;
+
+export const ReadMoreButtonWrapper = styled.button`
+    background: #FE5F55;
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    min-width: 240px;
+    padding: 8px 15px;
+    padding-right: 75px;
+    position: relative;
+    transition: 0.2s;
+    -webkit-font-smoothing: antialiased;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        width: 45px;
+        content: "";
+        text-align: center;
+        transition: 0.2s;
+        transform-origin: 50% 60%;
+        background: rgba(0, 0, 0, 0.1);
+    }
+    &:active,
+    &:focus {
+        background: #b90c01;
+    }
+    & svg {
+        position: absolute;
+        top: 4px;
+        bottom: 0;
+        right: 0;
+        width: 45px;
+        font-size: 14px;
+    }
+    &:hover {
+        background: #fe2f22;
+
+        svg {
+            -webkit-animation: ${bounceright} 0.3s alternate ease infinite;
+            animation: ${bounceright} 0.3s alternate ease infinite;
+        }
+    }
+`;
+
+export const SearchButtonWrapper = styled.button`
+    background: #009ed8;
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    min-width: 240px;
+    padding: 8px 15px;
+    padding-right: 75px;
+    position: relative;
+    transition: 0.2s;
+    -webkit-font-smoothing: antialiased;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        width: 45px;
+        content: "";
         text-align: center;
         transition: 0.2s;
         transform-origin: 50% 60%;
@@ -93,7 +245,7 @@ export const FindButtonWrapper = styled.button`
     }
     &:hover {
         background: #0079a5;
-        
+
         svg {
             -webkit-animation: none;
             -webkit-transform: scale(1.4);
@@ -106,6 +258,8 @@ export const FindButtonWrapper = styled.button`
 export const PrimarySwipeWrapper = styled.button`
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
   cursor: pointer;
   padding: 8px 15px;
   border: 1px solid currentColor;
@@ -138,6 +292,8 @@ export const PrimarySwipeWrapper = styled.button`
 export const PrimaryDiagonalSwipeWrapper = styled.button`
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
   cursor: pointer;
   padding: 8px 15px;
   background-color: ${theme.primaryBgPallete};
@@ -170,6 +326,8 @@ export const PrimaryDiagonalSwipeWrapper = styled.button`
 export const PrimarySliceWrapper = styled.button`
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
   cursor: pointer;
   padding: 8px 15px;
   background-color: ${theme.primaryBgPallete};

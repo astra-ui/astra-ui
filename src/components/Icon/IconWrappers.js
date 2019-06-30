@@ -7,4 +7,14 @@ export const IconWrappers = styled.svg`
     & circle {
         stroke-width: 2;
     }
-`
+`;
+
+export const MediumIconWrappers = styled.svg`
+    width: 1.6em;
+    height: 1.6em;
+
+    & circle {
+        stroke-width: 2;
+    }
+`;
+
